@@ -1,64 +1,260 @@
-<<<<<<< HEAD
-# EquiparkGpsWeb
+Equipark GPS Web
+Frontend de la solución comercial B2C de Equipark GPS para la adquisición de servicios de localización GPS para vehículos.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Estado: En construcción
+Versión: 0.1
+Frontend: Angular + Tailwind CSS
+Marca: Equipark GPS
+Repositorio: equipark-gps-web
+1. Objetivo
+Permitir que el cliente conozca, seleccione y adquiera una solución GPS para su vehículo con el menor número posible de pasos.
 
-## Development server
+Flujo principal:
+Landing
+  ↓
+Seleccionar OBD / AVL
+  ↓
+Ingresar placa
+  ↓
+Consultar información del vehículo
+  ↓
+Confirmar / completar datos
+  ↓
+Datos del cliente
+  ↓
+Autorizaciones
+  ↓
+Pago
+  ↓
+Punto de instalación
+  ↓
+Fecha y hora
+  ↓
+Confirmación
+2. Soluciones
+OBD
+Solución GPS con instalación Plug & Play.
+- Rastreo GPS.
+- Instalación Plug & Play.
+- Instalación en menos de 30 minutos.
+- Gestión mediante plataforma.
+- Aplicación móvil.
+Dispositivo: Linkworld OBD.
+AVL
+Solución GPS con instalación especializada.
+- Rastreo GPS.
+- Instalación especializada.
+- Mayor nivel de control.
+- Funcionalidades adicionales según compatibilidad del vehículo.
+- Monitoreo 24/7 por Seguridad de Colombia.
+Dispositivo: Suntech 8310UM.
+Las funcionalidades adicionales del AVL dependen de las características y arquitectura electrónica del vehículo.
 
-To start a local development server, run:
+3. Consulta por placa
+La aplicación deberá aprovechar la base de datos existente de vehículos para evitar digitación innecesaria.
+PLACA
+  ↓
+Consulta DB / API
+  ↓
+¿Encontrado?
+ ├─ Sí → Mostrar datos → Confirmar
+ └─ No → Solicitar datos → Continuar
+Información prevista:
+- Placa.
+- VIN / chasis.
+- Marca.
+- Modelo / línea.
+- Año.
+- Tipo de vehículo.
+- Combustible / tecnología.
+- Estado de garantía.
+- Tipo de encendido.
+- Solución seleccionada.
+La integración real con la DB/API queda pendiente.
+4. Autorizaciones
+El flujo contempla checkbox para:
+☐ Mi vehículo se encuentra actualmente en garantía.
 
-```bash
-ng serve
-```
+☐ Autorizo a Equipark para instalar el dispositivo GPS
+seleccionado en mi vehículo.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+☐ Autorizo el tratamiento de mis datos personales para
+gestionar la compra, instalación y prestación del servicio.
+5. Datos del cliente
+- Nombre.
+- Apellido.
+- Cédula.
+- Teléfono.
+- Correo.
+- Departamento.
+- Ciudad.
+- Dirección.
+- PIN de cuatro dígitos.
+6. Pago
+Inicialmente se simularán:
+- PSE.
+- Tarjeta.
+La pasarela real será proporcionada posteriormente por Equipark.
 
-## Code scaffolding
+La implementación deberá abstraerse mediante un PaymentService para permitir reemplazar la simulación por la pasarela real.
+7. Instalación
+El cliente seleccionará:
+- Punto de instalación.
+- Fecha.
+- Hora.
+Reglas actuales:
+- Mínimo un día de anticipación.
+- OBD: menos de 30 minutos.
+- AVL: aproximadamente 2 horas.
+- Disponibilidad de instalación 24/7.
+8. Diseño y UX
+La primera versión utilizará exclusivamente la identidad de Equipark.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Principios:
+- Menos clics.
+- Diseño B2C.
+- Experiencia clara.
+- Responsive.
+- Mobile-first cuando aplique.
+- Cards y CTA claros.
+- Validaciones visibles.
+- Evitar formularios innecesariamente extensos.
+La interfaz deberá funcionar correctamente en:
+- Desktop.
+- Tablet.
+- Mobile.
+9. Estilos
+Se utilizará Tailwind CSS.
 
-```bash
-ng generate component component-name
-```
+La arquitectura visual debe permitir modificar la apariencia desde una ubicación centralizada, siguiendo el enfoque utilizado anteriormente en StayEasy.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Se deben centralizar:
+- Colores.
+- Tipografía.
+- Botones.
+- Cards.
+- Formularios.
+- Badges.
+- Espaciados.
+- Componentes.
+Esto permitirá posteriormente adaptar el branding sin reconstruir la aplicación.
+10. Arquitectura objetivo
+src/app/
 
-```bash
-ng generate --help
-```
+├── core/
+│   ├── models/
+│   └── services/
+│
+├── shared/
+│   └── components/
+│
+├── pages/
+│   └── home/
+│
+└── features/
+    ├── vehicle/
+    ├── checkout/
+    ├── payment/
+    └── installation/
+Servicios previstos
+VehicleService
+consultarPorPlaca()
+PurchaseService
+Gestiona el proceso de compra.
 
-## Building
+PaymentService
+Gestionará posteriormente la pasarela de pagos.
 
-To build the project run:
+InstallationService
+Gestionará puntos, disponibilidad, fecha, hora y reserva.
+11. Inteligencia artificial
+La IA se considera una posibilidad futura para recomendar OBD o AVL.
 
-```bash
-ng build
-```
+No forma parte de la primera versión.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Modelo futuro:
+Marca
+Modelo
+Año
+Combustible
+Tecnología
+Garantía
+Arquitectura
+Funcionalidades
+      ↓
+Motor de reglas / IA
+      ↓
+Recomendación OBD / AVL
+La primera versión deberá utilizar reglas de negocio controladas.
+12. Alcance
+Completado
+- [x] Repositorio Git.
+- [x] Proyecto Angular.
+- [x] Landing inicial.
+- [x] Selección OBD / AVL.
+- [x] Cards de productos.
+- [x] Consulta simulada por placa.
+- [x] Datos del vehículo.
+- [x] Datos del cliente.
+- [x] Autorizaciones.
+- [x] Pago simulado.
+- [x] Selección de instalación.
+- [x] Fecha y hora.
+- [x] Confirmación.
+- [x] Tailwind CSS.
+- [x] Responsive.
+- [x] Branding Equipark.
+En construcción
+- [ ] Refactorización de Home.
+- [ ] Componentización definitiva.
+- [ ] Modelos TypeScript.
+- [ ] Services.
+- [ ] Centralización de estilos.
+- [ ] Validaciones definitivas.
+Pendiente
+- [ ] API / DB real de vehículos.
+- [ ] Reglas definitivas de compatibilidad.
+- [ ] Pasarela de pagos.
+- [ ] Disponibilidad real de parqueaderos.
+- [ ] Agenda real.
+- [ ] Integración con instalación.
+- [ ] Backend.
+- [ ] Seguridad.
+- [ ] Términos y condiciones.
+- [ ] Política de tratamiento de datos.
+- [ ] Pruebas funcionales.
+- [ ] Pruebas responsive.
+- [ ] Despliegue productivo.
+- [ ] Evaluación de IA.
+13. Principios técnicos
+1. Solo OBD y AVL.
+2. Menor cantidad posible de clics.
+3. Consulta de información por placa.
+4. Angular + Tailwind CSS.
+5. Responsive desde el inicio.
+6. Equipark como branding inicial.
+7. Separación entre presentación, lógica y servicios.
+8. Código preparado para futuras integraciones.
+9. No comprometer funcionalidades que dependan de la compatibilidad del vehículo.
+10. Mantener una experiencia comercial clara y transparente.
+14. Estado
+🟡 EN CONSTRUCCIÓN
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# equipark-gps-web
-Landing Page
->>>>>>> e321dd325b92cae60de94be9c8440b2da7f006ec
+Próximo bloque:
+Arquitectura
+   ↓
+Separar Home
+   ↓
+Models
+   ↓
+Services
+   ↓
+Estilos centralizados
+   ↓
+Componentes
+   ↓
+Validación del flujo
+   ↓
+Preparación de API
+15. Base técnica
+La definición de las soluciones y la necesidad de validar técnicamente el vehículo antes de asignar funcionalidades se apoya en el piloto técnico realizado para Equipark, que validó soluciones AVL y OBD y documentó la importancia de considerar las características particulares del vehículo.

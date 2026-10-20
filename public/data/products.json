@@ -1,0 +1,46 @@
+[
+  {
+    "id": "basico",
+    "plan": "Básico",
+    "nombre": "GPS OBD",
+    "precio": 485000,
+    "periodo": "año",
+    "instalacion": "Menos de 30 minutos",
+    "monitoreo24x7": false,
+    "apagadoRemoto": false,
+    "caracteristicas": [
+      "Dispositivo GPS incluido",
+      "Instalación incluida",
+      "Rastreo en tiempo real",
+      "App iOS y Android",
+      "Soporte por WhatsApp",
+      "Historial de 90 días",
+      "Alertas de velocidad y movimiento",
+      "Geocercas",
+      "Botón de asistencia"
+    ]
+  },
+  {
+    "id": "premium",
+    "plan": "Premium",
+    "nombre": "GPS AVL",
+    "precio": 578000,
+    "periodo": "año",
+    "instalacion": "Aproximadamente 2 horas",
+    "monitoreo24x7": true,
+    "apagadoRemoto": true,
+    "caracteristicas": [
+      "Dispositivo GPS incluido",
+      "Instalación incluida",
+      "Rastreo en tiempo real",
+      "App iOS y Android",
+      "Soporte por WhatsApp",
+      "Historial de 90 días",
+      "Apagado remoto del motor",
+      "Alertas de velocidad y movimiento",
+      "Geocercas",
+      "Botón de asistencia",
+      "Monitoreo 24/7 por Seguridad de Colombia"
+    ]
+  }
+]

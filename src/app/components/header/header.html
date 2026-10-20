@@ -1,0 +1,121 @@
+<header class="equipark-header">
+
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <a
+      href="#inicio"
+      class="header-logo"
+      (click)="cerrarMenu()"
+      aria-label="Equipark GPS - Inicio"
+    >
+      <span class="logo-equipark">equipark</span>
+      <span class="logo-gps">GPS</span>
+    </a>
+
+
+    <!-- NAVEGACIÓN DESKTOP -->
+    <nav class="header-nav desktop-nav">
+
+      <a href="#planes">
+        Soluciones
+      </a>
+
+      <a href="#beneficios">
+        Beneficios
+      </a>
+
+      <a href="#como-funciona">
+        ¿Cómo funciona?
+      </a>
+
+      <a href="#instalacion">
+        Instalación
+      </a>
+
+    </nav>
+
+
+    <!-- CTA DESKTOP -->
+    <a
+      href="#planes"
+      class="header-cta desktop-cta"
+    >
+      Elige tu GPS
+    </a>
+
+
+    <!-- BOTÓN MOBILE -->
+    <button
+      type="button"
+      class="menu-button mobile-menu-button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuAbierto"
+      aria-label="Abrir menú"
+    >
+
+      @if (!menuAbierto) {
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      } @else {
+
+        <span class="menu-close-line"></span>
+        <span class="menu-close-line"></span>
+
+      }
+
+    </button>
+
+  </div>
+
+
+  <!-- MENÚ MOBILE -->
+
+  @if (menuAbierto) {
+
+    <nav class="mobile-nav">
+
+      <a
+        href="#planes"
+        (click)="cerrarMenu()"
+      >
+        Soluciones
+      </a>
+
+      <a
+        href="#beneficios"
+        (click)="cerrarMenu()"
+      >
+        Beneficios
+      </a>
+
+      <a
+        href="#como-funciona"
+        (click)="cerrarMenu()"
+      >
+        ¿Cómo funciona?
+      </a>
+
+      <a
+        href="#instalacion"
+        (click)="cerrarMenu()"
+      >
+        Instalación
+      </a>
+
+      <a
+        href="#planes"
+        class="mobile-cta"
+        (click)="cerrarMenu()"
+      >
+        Elige tu GPS
+      </a>
+
+    </nav>
+
+  }
+
+</header>

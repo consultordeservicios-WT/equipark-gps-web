@@ -1,1 +1,152 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* =========================================
+   EQUIPARK DESIGN SYSTEM
+========================================= */
+
+:root {
+  --equipark-primary: #c4d600;
+  --equipark-primary-dark: #9fb000;
+  --equipark-dark: #13353b;
+  --equipark-dark-deep: #00272d;
+  --equipark-light: #f5f7f7;
+  --equipark-white: #ffffff;
+  --equipark-text: #1a1a1a;
+  --equipark-muted: #667477;
+
+  --radius-card: 1.5rem;
+  --radius-button: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+  color: var(--equipark-text);
+  background: var(--equipark-light);
+}
+
+/* BOTONES */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  border-radius: var(--radius-button);
+  background: var(--equipark-primary);
+  color: var(--equipark-dark-deep);
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--equipark-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--equipark-dark);
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--equipark-dark);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* SECCIONES */
+
+.section-title {
+  color: var(--equipark-dark);
+  font-weight: 800;
+}
+
+.section-subtitle {
+  color: var(--equipark-muted);
+}
+
+/* CARDS */
+
+.card-plan {
+  background: var(--equipark-white);
+  border: 1px solid #e3e8e8;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 39, 45, 0.08);
+}
+
+.card-plan-header {
+  padding: 2rem;
+  background: var(--equipark-dark);
+  color: var(--equipark-white);
+}
+
+.card-plan-premium .card-plan-header {
+  background: var(--equipark-dark-deep);
+}
+
+/* BADGES */
+
+.plan-badge {
+  display: inline-flex;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: var(--equipark-primary);
+  color: var(--equipark-dark-deep);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.security-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 1.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(196, 214, 0, 0.14);
+  border: 1px solid rgba(196, 214, 0, 0.45);
+  color: var(--equipark-primary);
+  font-weight: 800;
+}
+
+.security-badge span {
+  color: var(--equipark-white);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* FEATURES */
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.feature-check {
+  color: var(--equipark-primary-dark);
+  font-weight: 900;
+}
